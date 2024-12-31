@@ -39,5 +39,5 @@ CREATE TABLE bottle_pricing (
     created timestamptz default NULL,
     updated timestamptz default NULL
 );
--- ROLLBACK;
-COMMIT;
+ROLLBACK;
+-- COMMIT;
