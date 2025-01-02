@@ -1,4 +1,4 @@
-import { logOffer, logTool, soundAlert, storeOffer } from './index.js';
+import { logOffer, soundAlert, storeOffer } from './index.js';
 
 const checkOffer = async ( { offer, currOffer } ) => {
     if (currOffer !== null && offer.name === currOffer.name) return currOffer;

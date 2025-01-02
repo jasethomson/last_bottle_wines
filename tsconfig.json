@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "outDir": "./build",
+      "allowJs": true,
+      "target": "es6",
+      "skipLibCheck": true
+    },
+    "include": ["./app/**/*"],
+    "exclude": [
+      "node_modules"
+    ]
+}

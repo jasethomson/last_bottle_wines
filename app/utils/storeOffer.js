@@ -1,4 +1,4 @@
-import { writeDB } from '../../json_db/db.js';
+import { writeDB } from '../json_db/db.js';
 import { logTool } from './index.js';
 
 const storeOffer = async ({ offer }) => {
