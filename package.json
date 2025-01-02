@@ -1,9 +1,11 @@
 {
   "type": "module",
+  "scripts": {
+    "app": "tsc && node build/index.js"
+  },
   "dependencies": {
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
-    "fetch": "^1.1.0",
     "fs": "^0.0.1-security",
     "node-color-log": "^12.0.1",
     "node-fetch": "^3.3.2",
