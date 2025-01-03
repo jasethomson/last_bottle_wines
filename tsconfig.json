@@ -2,11 +2,15 @@
     "compilerOptions": {
       "outDir": "./build",
       "allowJs": true,
+      "skipLibCheck": true,
+      "noImplicitAny": true,
+      "module": "esnext",
       "target": "es6",
-      "skipLibCheck": true
+      "moduleResolution": "node"
     },
     "include": ["./app/**/*"],
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "build"
     ]
 }
