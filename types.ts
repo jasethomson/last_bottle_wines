@@ -1,29 +1,43 @@
 export interface Offer {
-    name: String;
-    price: Number;
-    webPrice: Number | null;
-    retailPrice: Number | null;
-    savings: Number | null;
-    descriptionText: String | null;
-    pointsRatings: String | null;
+    name: string;
+    price: number;
+    webPrice: number | null;
+    retailPrice: number | null;
+    savings: number | null;
+    descriptionText: string | null;
+    pointsRatings: string[];
     techDetails: TechDetails[];
 };
 
 export interface TechDetails {
-    rating?: String;
-    country?: String;
-    appellation?: String;
-    alcohol?: String;
-    aging_cooperage?: String;
-    ta?: String;
-    farming?: String;
-    vineyard?: String;
-    region?: String;
-    varietal?: String;
-    wine_maker?: String;
-    ph?: String;
-    blend?: String;
-    harvest_date?: String;
-    production?: String;
+    rating?: string;
+    country?: string;
+    appellation?: string;
+    alcohol?: string;
+    aging_cooperage?: string;
+    ta?: string;
+    farming?: string;
+    vineyard?: string;
+    region?: string;
+    varietal?: string;
+    wine_maker?: string;
+    ph?: string;
+    blend?: string;
+    harvest_date?: string;
+    production?: string;
 };
+
+export interface ScrapedOfferVals {
+    name: string;
+    price: number;
+    webPrice: number;
+    retailPrice: number;
+    descriptionText: string | null;
+    pointsRatings: string[];
+    techDetails: TechDetails[];
+}
+
+// node-color-log has no exported types 
+export type NodeColorLogColors = "black" | "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "white";
+
 

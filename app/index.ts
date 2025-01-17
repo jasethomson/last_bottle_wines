@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config();
 
-import { checkForLatestOffer } from './utils/index.js';
+import { checkForLatestOffer } from './utils';
 
 const app = async () => {
     const currOffer = await checkForLatestOffer({ currOffer: null });
