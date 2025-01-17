@@ -5,7 +5,7 @@ import getOfferPageHtml from './getOfferPageHtml.js';
 import getOfferHtmlVals from './getOfferHtmlVals.js';
 import calculateSavings from './calculateSavings.js';
 import getOffer from './getOffer.js';
-import checkForLatestOffer from './checkForLatestOffer.js';
+import checkForLatestOffer from './checkForLatestOffer.ts';
 import logTool from './logTool.js';
 import logOffer from './logOffer.js';
 import soundAlert from './soundAlert.js';

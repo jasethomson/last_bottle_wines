@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import { config } from 'dotenv';
+config();
 
 import { checkForLatestOffer } from './utils/index.js';
 

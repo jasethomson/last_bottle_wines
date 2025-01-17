@@ -1,7 +1,7 @@
 {
-  "type": "module",
   "scripts": {
-    "app": "tsc && node build/index.js"
+    "build": "webpack --mode=production",
+    "app": "webpack --mode=production && node build/bundle.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
@@ -10,5 +10,16 @@
     "node-color-log": "^12.0.1",
     "node-fetch": "^3.3.2",
     "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.3",
+    "@types/node-fetch": "^2.6.12",
+    "@types/webpack-node-externals": "^3.0.4",
+    "babel-loader": "^9.2.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }
