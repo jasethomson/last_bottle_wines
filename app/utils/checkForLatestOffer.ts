@@ -1,4 +1,4 @@
-import { checkOffer, getOffer } from './index.js';
+import { checkOffer, getOffer } from '.';
 import { Offer } from '../../types';
 
 interface CheckForLatestOffer {

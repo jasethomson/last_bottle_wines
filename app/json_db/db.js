@@ -1,9 +1,7 @@
 import fs from'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
-import { logTool } from '../utils/index.js';
+import { logTool } from '../utils';
 
 
 

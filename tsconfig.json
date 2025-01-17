@@ -6,7 +6,8 @@
       "noImplicitAny": true,
       "module": "esnext",
       "target": "es6",
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "esModuleInterop": true // added to fix import of node-color-log 
     },
     "include": ["./app/**/*"],
     "exclude": [
