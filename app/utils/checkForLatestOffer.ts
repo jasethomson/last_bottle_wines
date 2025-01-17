@@ -1,5 +1,5 @@
 import { checkOffer, getOffer } from './index.js';
-import { Offer } from '../../types.ts';
+import { Offer } from '../../types';
 
 interface CheckForLatestOffer {
     currOffer: Offer | null
