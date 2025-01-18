@@ -40,4 +40,17 @@ export interface ScrapedOfferVals {
 // node-color-log has no exported types 
 export type NodeColorLogColors = "black" | "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "white";
 
+export interface BottleTrackerJsonRow {
+    id: number;
+    name: Offer['name'];
+    price: Offer['price'];
+    web_price: Offer['webPrice'];
+    retail_price: Offer['retailPrice'];
+    description: Offer['descriptionText']; 
+    points_ratings: Offer['pointsRatings'];
+    tech_details: Offer['techDetails'];
+    created: Date;
+    updated: Date;
+};
+
 
