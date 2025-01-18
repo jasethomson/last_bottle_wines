@@ -19,17 +19,12 @@ export default {
 				test: /\.ts$/,
 				use: 'ts-loader',
 				exclude: /node_modules/,
-			},
-			{
-				test: /\.js$/,
-				use: 'babel-loader',
-				exclude: /node_modules/,
-			},
+			}
 		],
 	},
 	resolve: {
 		roots: [path.resolve('./app')],
-		extensions: ['.ts', '.js'],
+		extensions: ['.ts'],
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
