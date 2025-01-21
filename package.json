@@ -2,8 +2,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "app": "webpack --mode=production && node build/bundle.js",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
