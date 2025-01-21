@@ -1,4 +1,3 @@
-
 import calculateSavings from './calculateSavings';
 import checkForLatestOffer from './checkForLatestOffer';
 import checkOffer from './checkOffer';
@@ -12,15 +11,15 @@ import soundAlert from './soundAlert';
 import storeOffer from './storeOffer';
 
 export {
-    calculateSavings,
-    checkForLatestOffer,
-    checkOffer,
-    getOffer,
-    getOfferHtmlVals,
-    getOfferPageHtml,
-    logOffer,
-    logTool,
-    requestCurrentOffer,
-    soundAlert,
-    storeOffer
+  calculateSavings,
+  checkForLatestOffer,
+  checkOffer,
+  getOffer,
+  getOfferHtmlVals,
+  getOfferPageHtml,
+  logOffer,
+  logTool,
+  requestCurrentOffer,
+  soundAlert,
+  storeOffer,
 };

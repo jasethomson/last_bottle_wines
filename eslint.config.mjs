@@ -13,7 +13,7 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  // ...tseslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     plugins: {
       prettier,
@@ -24,6 +24,7 @@ export default [
       quotes: ['error', 'single', { avoidEscape: true }],
       'no-multiple-empty-lines': ['error', { max: 1 }],
       'no-console': 'error',
+      'no-const-assign': 'error',
       'prettier/prettier': [
         'error',
         {
