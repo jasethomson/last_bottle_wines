@@ -1,7 +1,4 @@
-import createPool from './createPool'; 
-import runQuery from './runQuery'; 
+import createPool from './createPool';
+import runQuery from './runQuery';
 
-export {
-    createPool,
-    runQuery
-}
+export { createPool, runQuery };
