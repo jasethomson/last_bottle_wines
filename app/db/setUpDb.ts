@@ -44,6 +44,10 @@ interface ClientQuery {
 }
 
 export const clientQuery = async ({ client, queryText, variables }: ClientQuery) => {
+  if (!client || !queryText) {
+    logTool({ msg: ['clientQuery - Invalid arguments received.', client, queryText] });
+    throw new Error('clientQuery - Invalid arguments received.');
+  }
   try {
     const start = Date.now();
     const res = await client.query(queryText, variables);

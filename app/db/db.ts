@@ -7,6 +7,10 @@ interface Query {
 }
 
 export const query = async ({ queryText }: Query): Promise<QueryResult> => {
+  if (!queryText) {
+    logTool({ msg: ['query - Invalid arguments received.', queryText] });
+    throw new Error('query - Invalid arguments received.');
+  }
   try {
     const start = Date.now();
     const res = await pool.query(queryText);
