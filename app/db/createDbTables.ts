@@ -1,9 +1,5 @@
-// import { Client } from 'pg';
 import { logTool } from '../utils';
 import { query } from '.';
-// interface CreateDbTables {
-//   client: Client;
-// }
 
 export const createBottleTracker = async (): Promise<void> => {
   try {
