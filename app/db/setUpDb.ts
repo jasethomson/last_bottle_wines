@@ -10,27 +10,19 @@ const getClient = async () => {
   });
 };
 
-interface ConnectClient {
+interface DbClient {
   client: Client;
 }
 
-const connectCLient = async ({ client }: ConnectClient) => {
+const connectCLient = async ({ client }: DbClient) => {
   await client.connect();
 };
 
-interface CloseClient {
-  client: Client;
-}
-
-const closeClient = async ({ client }: CloseClient) => {
+const closeClient = async ({ client }: DbClient) => {
   await client.end();
 };
 
-interface CreateDb {
-  client: Client;
-}
-
-export const createDb = async ({ client }: CreateDb) => {
+export const createDb = async ({ client }: DbClient) => {
   if (!process.env.DB) {
     throw new Error('createDb - no db found in env.');
   }
