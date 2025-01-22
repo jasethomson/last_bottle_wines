@@ -1,4 +1,15 @@
-import createPool from './createPool';
-import runQuery from './runQuery';
+import { query } from './db';
+import { createDb, verifyDbExists } from './setUpDb';
+import { createBottleDetails, createBottlePricing, createBottleTracker, createDbTables } from './createDbTables';
+import { pool } from './pool';
 
-export { createPool, runQuery };
+export {
+  createBottleDetails,
+  createBottlePricing,
+  createBottleTracker,
+  createDb,
+  createDbTables,
+  pool,
+  query,
+  verifyDbExists,
+};
