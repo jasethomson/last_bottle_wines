@@ -1,56 +1,54 @@
 export interface Offer {
-    name: string;
-    price: number;
-    webPrice: number | null;
-    retailPrice: number | null;
-    savings: number | null;
-    descriptionText: string | null;
-    pointsRatings: string[];
-    techDetails: TechDetails[];
-};
-
-export interface TechDetails {
-    rating?: string;
-    country?: string;
-    appellation?: string;
-    alcohol?: string;
-    aging_cooperage?: string;
-    ta?: string;
-    farming?: string;
-    vineyard?: string;
-    region?: string;
-    varietal?: string;
-    wine_maker?: string;
-    ph?: string;
-    blend?: string;
-    harvest_date?: string;
-    production?: string;
-};
-
-export interface ScrapedOfferVals {
-    name: string;
-    price: number;
-    webPrice: number;
-    retailPrice: number;
-    descriptionText: string | null;
-    pointsRatings: string[];
-    techDetails: TechDetails[];
+  name: string;
+  price: number;
+  webPrice: number | null;
+  retailPrice: number | null;
+  savings: number | null;
+  descriptionText: string | null;
+  pointsRatings: string[];
+  techDetails: TechDetails[];
 }
 
-// node-color-log has no exported types 
-export type NodeColorLogColors = "black" | "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "white";
+export interface TechDetails {
+  rating?: string;
+  country?: string;
+  appellation?: string;
+  alcohol?: string;
+  aging_cooperage?: string;
+  ta?: string;
+  farming?: string;
+  vineyard?: string;
+  region?: string;
+  varietal?: string;
+  wine_maker?: string;
+  ph?: string;
+  blend?: string;
+  harvest_date?: string;
+  production?: string;
+}
+
+export interface ScrapedOfferVals {
+  name: string;
+  price: number;
+  webPrice: number;
+  retailPrice: number;
+  descriptionText: string | null;
+  pointsRatings: string[];
+  techDetails: TechDetails[];
+}
+
+// node-color-log has no exported types
+export type NodeColorLogColors = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
 
 export interface BottleTrackerJsonRow {
-    id: number;
-    name: Offer['name'];
-    price: Offer['price'];
-    web_price: Offer['webPrice'];
-    retail_price: Offer['retailPrice'];
-    description: Offer['descriptionText']; 
-    points_ratings: Offer['pointsRatings'];
-    tech_details: Offer['techDetails'];
-    created: Date;
-    updated: Date;
-};
-
-
+  id: number;
+  name: Offer['name'];
+  price: Offer['price'];
+  web_price: Offer['webPrice'];
+  retail_price: Offer['retailPrice'];
+  description: Offer['descriptionText'];
+  points_ratings: Offer['pointsRatings'];
+  tech_details: Offer['techDetails'];
+  created: Date;
+  updated: Date;
+}
