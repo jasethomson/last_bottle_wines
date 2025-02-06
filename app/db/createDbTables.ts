@@ -5,14 +5,15 @@ export const createBottleTracker = async (): Promise<void> => {
   try {
     await query({
       queryText: `
-                CREATE TABLE bottle_tracker (
-                    id BIGSERIAL PRIMARY KEY,
-                    name varchar(750) NOT NULL,
-                    description text,
-                    created timestamptz default NULL,
-                    updated timestamptz default NULL
-                );
-            `,
+        CREATE TABLE bottle_tracker (
+            id BIGSERIAL PRIMARY KEY,
+            name varchar(750) NOT NULL,
+            description text,
+            created timestamptz DEFAULT current_timestamp,
+            updated timestamptz DEFAULT current_timestamp,
+            deleted_at timestamptz DEFAULT NULL
+        );
+      `,
     });
   } catch (err) {
     logTool({ msg: ['createBottleTracker - Error creating bottle_tracker.', err.message] });
@@ -42,8 +43,9 @@ export const createBottleDetails = async (): Promise<void> => {
             blend varchar(255),
             harvest_date varchar(255),
             production varchar(100),
-            created timestamptz default NULL,
-            updated timestamptz default NULL
+            created timestamptz default current_timestamp,
+            updated timestamptz default current_timestamp,
+            deleted_at timestamptz DEFAULT NULL
         );
     `,
     });
@@ -57,15 +59,16 @@ export const createBottlePricing = async (): Promise<void> => {
   try {
     await query({
       queryText: `
-            CREATE TABLE bottle_pricing (
-                id BIGSERIAL PRIMARY KEY,
-                bottle_tracker_id BIGINT REFERENCES bottle_tracker NOT NULL,
-                price integer,
-                retail_price integer,
-                web_price integer,
-                created timestamptz default NULL,
-                updated timestamptz default NULL
-            );
+        CREATE TABLE bottle_pricing (
+            id BIGSERIAL PRIMARY KEY,
+            bottle_tracker_id BIGINT REFERENCES bottle_tracker NOT NULL,
+            price integer,
+            retail_price integer,
+            web_price integer,
+            created timestamptz default current_timestamp,
+            updated timestamptz default current_timestamp,
+            deleted_at timestamptz DEFAULT NULL
+        );
       `,
     });
   } catch (err) {
@@ -84,5 +87,3 @@ export const createDbTables = async (): Promise<void> => {
     throw err;
   }
 };
-
-export default createDbTables;

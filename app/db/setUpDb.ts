@@ -1,6 +1,6 @@
 import { Client } from 'pg';
 import { logTool } from '../utils';
-import { createDbTables } from '.';
+import { createDbFunctions, createDbTables, createDbTriggers } from '.';
 
 const getClient = async () => {
   return new Client({
@@ -74,6 +74,8 @@ export const verifyDbExists = async () => {
       await createDb({ client });
       await closeClient({ client });
       await createDbTables();
+      await createDbFunctions();
+      await createDbTriggers();
     } else {
       await closeClient({ client });
     }

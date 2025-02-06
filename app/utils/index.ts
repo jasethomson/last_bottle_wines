@@ -4,11 +4,14 @@ import checkOffer from './checkOffer';
 import getOffer from './getOffer';
 import getOfferHtmlVals from './getOfferHtmlVals';
 import getOfferPageHtml from './getOfferPageHtml';
+import getPointsRatings from './getPointsRatings';
+import getTechDetails from './getTechDetails';
 import logOffer from './logOffer';
 import logTool from './logTool';
 import requestCurrentOffer from './requestCurrentOffer';
 import soundAlert from './soundAlert';
 import storeOffer from './storeOffer';
+import isKeyOfObject from './isKeyOfObject';
 
 export {
   calculateSavings,
@@ -17,6 +20,9 @@ export {
   getOffer,
   getOfferHtmlVals,
   getOfferPageHtml,
+  getPointsRatings,
+  getTechDetails,
+  isKeyOfObject,
   logOffer,
   logTool,
   requestCurrentOffer,

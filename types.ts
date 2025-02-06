@@ -6,25 +6,25 @@ export interface Offer {
   savings: number | null;
   descriptionText: string | null;
   pointsRatings: string[];
-  techDetails: TechDetails[];
+  techDetails: TechDetails;
 }
 
 export interface TechDetails {
-  rating?: string;
-  country?: string;
-  appellation?: string;
-  alcohol?: string;
-  aging_cooperage?: string;
-  ta?: string;
-  farming?: string;
-  vineyard?: string;
-  region?: string;
-  varietal?: string;
-  wine_maker?: string;
-  ph?: string;
-  blend?: string;
-  harvest_date?: string;
-  production?: string;
+  rating: string | null;
+  country: string | null;
+  appellation: string | null;
+  alcohol: string | null;
+  aging_cooperage: string | null;
+  ta: string | null;
+  farming: string | null;
+  vineyard: string | null;
+  region: string | null;
+  varietal: string | null;
+  wine_maker: string | null;
+  ph: string | null;
+  blend: string | null;
+  harvest_date: string | null;
+  production: string | null;
 }
 
 export interface ScrapedOfferVals {
@@ -34,7 +34,7 @@ export interface ScrapedOfferVals {
   retailPrice: number;
   descriptionText: string | null;
   pointsRatings: string[];
-  techDetails: TechDetails[];
+  techDetails: TechDetails;
 }
 
 // node-color-log has no exported types

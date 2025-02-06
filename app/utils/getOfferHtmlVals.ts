@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio';
 import { ScrapedOfferVals } from '../../types';
+import { getPointsRatings, getTechDetails } from '.';
 
 interface GetOfferHtmlVals {
   html: string;
@@ -15,23 +16,8 @@ const getOfferHtmlVals = ({ html }: GetOfferHtmlVals): ScrapedOfferVals => {
   const $detailsContainer = $('#details');
   const descriptionText = $detailsContainer.length ? $detailsContainer.find('p:first-of-type').html() : null;
 
-  const $descriptionContainer = $('#description');
-  const pointsRatings: ScrapedOfferVals['pointsRatings'] = [];
-  if ($descriptionContainer.length) {
-    $descriptionContainer.find('.points-circle').each((i, elem) => {
-      pointsRatings.push($(elem).find('span').text());
-    });
-  }
-
-  const $techDetails = $('.tech-details');
-  const techDetails: ScrapedOfferVals['techDetails'] = [];
-  if ($techDetails.length) {
-    $techDetails.find('li').each((i, elem) => {
-      const details = $(elem).text();
-      const [detailsKey, detailsVal] = details.split(':');
-      techDetails.push({ [detailsKey]: detailsVal.trim() });
-    });
-  }
+  const pointsRatings = getPointsRatings({ $ });
+  const techDetails = getTechDetails({ $ });
 
   return {
     name,
