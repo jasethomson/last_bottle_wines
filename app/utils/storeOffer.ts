@@ -1,6 +1,7 @@
 import { write } from '../json_db';
 import { logTool } from '.';
 import { Offer } from '../../types';
+import { insertOffer } from '../db';
 
 interface StoreOffer {
   offer: Offer;
@@ -22,6 +23,7 @@ const storeOffer = async ({ offer }: StoreOffer): Promise<void> => {
         updated: new Date(),
       },
     });
+    await insertOffer({ offer });
   } catch (err) {
     logTool({ color: 'red', msg: ['Error storing result in db', err] });
     throw err;

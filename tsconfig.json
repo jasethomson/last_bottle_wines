@@ -1,17 +1,14 @@
 {
-    "compilerOptions": {
-      "outDir": "./build",
-      "allowJs": true,
-      "skipLibCheck": true,
-      "noImplicitAny": true,
-      "module": "esnext",
-      "target": "es6",
-      "moduleResolution": "node",
-      "esModuleInterop": true // added to fix import of node-color-log 
-    },
-    "include": ["./app/**/*"],
-    "exclude": [
-      "node_modules",
-      "build"
-    ]
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "es2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true // added to fix import of node-color-log
+  },
+  "include": ["./app/**/*"],
+  "exclude": ["node_modules", "build"]
 }
