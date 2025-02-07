@@ -13,6 +13,7 @@ import soundAlert from './soundAlert';
 import storeOffer from './storeOffer';
 import isKeyOfObject from './isKeyOfObject';
 import setUnknownDetails from './setUnknownDetails';
+import translateAltKey from './translateAltKey';
 
 export {
   calculateSavings,
@@ -30,4 +31,5 @@ export {
   setUnknownDetails,
   soundAlert,
   storeOffer,
+  translateAltKey,
 };

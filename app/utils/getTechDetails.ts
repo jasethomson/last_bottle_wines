@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { TechDetails } from '../../types';
-import { isKeyOfObject, logTool, setUnknownDetails } from '.';
+import { isKeyOfObject, logTool, setUnknownDetails, translateAltKey } from '.';
 
 interface GetTechDetails {
   $: cheerio.CheerioAPI;
@@ -36,6 +36,8 @@ const getTechDetails = ({ $ }: GetTechDetails): TechDetails => {
       splitVals[0] = splitVals[0].toLowerCase().replace(/[/ ]+/g, '_');
       if (isKeyOfObject(splitVals[0], techDetails)) {
         key = splitVals[0];
+      } else {
+        key = translateAltKey({ key: splitVals[0] });
       }
       if (key === null || !splitVals[1]) {
         if (splitVals[0] && splitVals[1]) {
