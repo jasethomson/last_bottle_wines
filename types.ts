@@ -25,6 +25,7 @@ export interface TechDetails {
   blend: string | null;
   harvest_date: string | null;
   production: string | null;
+  unknown_details: string | null;
 }
 
 export interface ScrapedOfferVals {

@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { TechDetails } from '../../types';
-import { isKeyOfObject, logTool } from '.';
+import { isKeyOfObject, logTool, setUnknownDetails } from '.';
 
 interface GetTechDetails {
   $: cheerio.CheerioAPI;
@@ -25,10 +25,10 @@ const getTechDetails = ({ $ }: GetTechDetails): TechDetails => {
     blend: null,
     harvest_date: null,
     production: null,
+    unknown_details: null,
   };
   if ($techDetails.length) {
     $techDetails.find('li').each((i, elem) => {
-      logTool({ msg: [$(elem).html()] });
       const details = $(elem).text();
       let key = null;
       let val = null;
@@ -38,8 +38,16 @@ const getTechDetails = ({ $ }: GetTechDetails): TechDetails => {
         key = splitVals[0];
       }
       if (key === null || !splitVals[1]) {
-        logTool({ color: 'red', msg: [`getTechDetails - Invalid Key/Val found for details: ${details}`, splitVals] });
-        throw new Error(`getTechDetails - Invalid Key/Val found for details: ${details}`);
+        if (splitVals[0] && splitVals[1]) {
+          techDetails.unknown_details = setUnknownDetails({
+            unknownDetails: techDetails.unknown_details,
+            key: splitVals[0],
+            val: splitVals[1],
+          });
+        } else {
+          logTool({ color: 'red', msg: [`getTechDetails - Invalid Key/Val found for details: ${details}`, splitVals] });
+          throw new Error(`getTechDetails - Invalid Key/Val found for details: ${details}`);
+        }
       }
       val = splitVals[1];
       techDetails[key] = val.trim();
