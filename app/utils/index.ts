@@ -12,6 +12,7 @@ import requestCurrentOffer from './requestCurrentOffer';
 import soundAlert from './soundAlert';
 import storeOffer from './storeOffer';
 import isKeyOfObject from './isKeyOfObject';
+import setUnknownDetails from './setUnknownDetails';
 
 export {
   calculateSavings,
@@ -26,6 +27,7 @@ export {
   logOffer,
   logTool,
   requestCurrentOffer,
+  setUnknownDetails,
   soundAlert,
   storeOffer,
 };

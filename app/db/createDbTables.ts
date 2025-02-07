@@ -43,6 +43,7 @@ export const createBottleDetails = async (): Promise<void> => {
             blend varchar(255),
             harvest_date varchar(255),
             production varchar(100),
+            unknown_details JSONB,
             created timestamptz default current_timestamp,
             updated timestamptz default current_timestamp,
             deleted_at timestamptz DEFAULT NULL

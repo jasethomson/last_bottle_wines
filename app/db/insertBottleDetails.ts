@@ -11,8 +11,8 @@ export const insertBottleDetails = async ({ bottleTrackerId, techDetails }: Inse
   try {
     const res = await query({
       queryText: `
-            INSERT INTO bottle_details (bottle_tracker_id, rating, country, appellation, alcohol, aging_cooperage, ta, farming, vineyard, region, varietal, wine_maker, ph, blend, harvest_date, production)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
+            INSERT INTO bottle_details (bottle_tracker_id, rating, country, appellation, alcohol, aging_cooperage, ta, farming, vineyard, region, varietal, wine_maker, ph, blend, harvest_date, production, unknown_details)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
             returning id;
           `,
       variables: [
@@ -32,6 +32,7 @@ export const insertBottleDetails = async ({ bottleTrackerId, techDetails }: Inse
         techDetails.blend,
         techDetails.harvest_date,
         techDetails.production,
+        techDetails.unknown_details,
       ],
     });
     if (!res?.rows?.[0]?.id) {
